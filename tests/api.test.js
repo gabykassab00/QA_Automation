@@ -20,4 +20,11 @@ describe('fetchUser',()=>{
         expect(answer).toEqual(mockUser);
     });
 
+    it('shoudl handle a 404 error',async ()=>{
+        fetch.mockResolvedValueOnce({
+            ok:false,
+            status:404
+        });
+        await expect(fetchUser(4)).rejects.toThrow("User not found")
+    })
 })
