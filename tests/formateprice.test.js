@@ -9,4 +9,9 @@ describe('format price',()=>{
         expect(formatPrice(0)).toBe("$0.00");
     });
     
+    it('throws an error for non-numeric input',()=>{
+        expect(()=>formatPrice('not a number')).toThrow();
+        expect(()=>formatPrice(null)).toThrow();
+        expect(()=>formatPrice(undefined)).toThrow();
+    });
 })
