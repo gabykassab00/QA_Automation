@@ -26,11 +26,19 @@ describe('calculateTotal',()=>{
         expect(calculateTotal(products)).toBe(10);
     })
 
-    it('handles items with zero quantity ',()=>{
+    it('should handle items with zero quantity ',()=>{
         const products = [
             {price:10,quantity:0},
             {price:20,quantity:2}
         ];
         expect(calculateTotal(products)).toBe(40);
+    })
+
+    it('should handle floating point precision issues correctly',()=>{
+        const products = [
+            {price:0.5,quantity:3},
+            {price:0.7,quantity:2},
+        ];
+        expect(calculateTotal(products)).toBe(2.9);
     })
 })
