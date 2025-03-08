@@ -10,6 +10,8 @@ describe('applyDiscount',()=>{
         expect(applyDiscount(-60,30)).toBe(-42);
     });
 
-
+    it('should handle very small totals',()=>{
+        expect(applyDiscount(0.01,50)).toBeCloseTo(0.005);
+    });
 
 })
