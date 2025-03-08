@@ -26,5 +26,14 @@ describe('fetchUser',()=>{
             status:404
         });
         await expect(fetchUser(4)).rejects.toThrow("User not found")
-    })
+    });
+
+    it('should handle sucessfull call with empty response',async()=>{
+        fetch.mockResolvedValueOnce({
+            ok:true,
+            json:()=>Promise.resolve({})
+        });
+        const answer = await fetchUser(5);
+        expect(answer).toEqual({});
+    });
 })
