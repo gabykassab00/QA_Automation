@@ -17,4 +17,12 @@ describe('calculateTotal',()=>{
         ];
         expect(calculateTotal(products)).toBe(-15)
     })
+
+    it('should handle items with zero prices',()=>{
+        const products=[
+            {price:0,quantity:4},
+            {price:5,quantity:2}
+        ];
+        expect(calculateTotal(products)).toBe(10);
+    })
 })
