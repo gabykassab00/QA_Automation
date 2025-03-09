@@ -52,6 +52,6 @@ Here are a few commands you should now be able to run:
 ## Additional Packages
 
 * Jest: The only additional package used, installed as a dev dependency:
-  *  Version: Latest available via npm install --save-dev jest.
+  *  Version: Latest available via `npm install --save-dev` jest.
 
 * No other libraries or tools are required beyond what’s in a standard Node.js environment.
