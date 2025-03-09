@@ -13,9 +13,13 @@ describe('applyDiscount',()=>{
         expect(applyDiscount(-60,30)).toBe(-42);
     });
 
-    //error handling : testing a tiny total to check precision 
+    //edge case : testing a tiny total to check precision 
     it('should handle very small totals',()=>{
         expect(applyDiscount(0.01,50)).toBeCloseTo(0.005);
     });
 
+    // Error Handling: Testing an invalid discount percentage above 100
+    it('should throw error for discount exceeding 100 percent', () => {
+        expect(() => applyDiscount(50, 150)).toThrow("Invalid discount"); 
+      });
 })
